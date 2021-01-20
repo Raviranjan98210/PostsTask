@@ -10,7 +10,7 @@
             type="text"
             v-model="email"
             placeholder="Enter email"
-            class="border px-6 py-2 w-full mb-4 focus:outline-none"
+            class="border px-2 py-2 w-full mb-4 focus:outline-none"
           />
           <button type="submit" class="w-full px-2 py-2 bg-pink-600 uppercase text-white">
             login

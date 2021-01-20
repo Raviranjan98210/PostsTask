@@ -1,29 +1,6 @@
 import axios from "axios";
 
 export default {
-  // saveToken({ commit }, payload) {
-  //   if (payload.data) {
-  //     commit("SET_AUTH_USER_DATA", payload.data);
-
-  //     setTimeout(function() {
-  //       payload.window.location = "/products";
-  //       payload.vue.loading = false;
-  //     }, 2000);
-  //   }
-  // },
-
-  // attemptLogout({ commit }, window) {
-  //   commit("UNSET_AUTH_USER_DATA");
-
-  //   setTimeout(function() {
-  //     window.location = "/";
-  //   }, 3000);
-  // },
-
-  // setUserApproved({ commit }) {
-  //   commit("SET_USER_APPROVED");
-  // },
-
   async fetchPosts({ commit }) {
     const response = await axios.get("https://jsonplaceholder.typicode.com/posts");
     console.log(response.data);
@@ -50,5 +27,9 @@ export default {
     setTimeout(function() {
       window.location = "/login";
     }, 3000);
+  },
+
+  addUserPost({ commit }, payload) {
+    commit("ADD_USER_POST", payload);
   },
 };

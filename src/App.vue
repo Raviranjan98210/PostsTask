@@ -1,13 +1,17 @@
 <template>
-  <div id="app" class="container mx-auto">
-    <router-view />
+  <div id="app">
+    <NavigationBar />
+    <div class="container mx-auto">
+      <router-view />
+    </div>
   </div>
 </template>
 
 <script>
+import NavigationBar from "./components/NavigationBar";
 export default {
   name: "app",
-  components: {}
+  components: { NavigationBar },
 };
 </script>
 <style scoped>

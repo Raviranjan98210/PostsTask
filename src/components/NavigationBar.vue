@@ -1,11 +1,11 @@
 <template>
   <div>
     <nav class="bg-purple-500  h-20 navbar   ">
-      <router-link to="/" class="ml-4">
+      <router-link to="/" class="ml-10">
         Logo
       </router-link>
 
-      <ul class="nav_menu mr-4">
+      <ul class="nav_menu mr-10">
         <li>
           <router-link to="/">
             All Post
@@ -17,13 +17,13 @@
           </router-link>
         </li>
         <li>
-          <router-link to="/">
+          <button @click="logout">
             Logout
-          </router-link>
+          </button>
         </li>
         <li>
           <router-link to="/">
-            User
+            {{ user === "" ? "Sign In" : user }}
           </router-link>
         </li>
       </ul>
@@ -37,12 +37,22 @@ export default {
   components: {},
   props: {},
   data() {
-    return {};
+    return {
+      user: "",
+    };
   },
   watch: {},
   computed: {},
-  methods: {},
-  created() {},
+  methods: {
+    logout() {
+      this.$store.dispatch("attemptLogout", window);
+    },
+  },
+  created() {
+    const user = localStorage.getItem("authToken");
+
+    this.user = user;
+  },
   mounted() {},
 };
 </script>

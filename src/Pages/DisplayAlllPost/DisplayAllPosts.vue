@@ -23,6 +23,9 @@ export default {
     },
   },
   created() {
+    if (localStorage.getItem("authToken") === null) {
+      this.$router.push("/login");
+    }
     this.$store.dispatch("fetchPosts");
   },
 };

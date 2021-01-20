@@ -64,10 +64,15 @@ export default {
   methods: {
     submitForm() {
       this.userPosts.unshift(this.post);
+      this.$store.dispatch("addUserPost", this.userPosts);
       this.post = {};
     },
   },
-  created() {},
+  created() {
+    if (localStorage.getItem("authToken") === null) {
+      this.$router.push("/login");
+    }
+  },
   mounted() {},
 };
 </script>
