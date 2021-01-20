@@ -1,6 +1,6 @@
 <template>
   <div>
-    <nav class="bg-purple-500  h-24 navbar   ">
+    <nav class="bg-purple-500  h-20 navbar   ">
       <router-link to="/" class="ml-4">
         Logo
       </router-link>
@@ -12,7 +12,7 @@
           </router-link>
         </li>
         <li>
-          <router-link to="/">
+          <router-link to="/your-post">
             Your Posts
           </router-link>
         </li>

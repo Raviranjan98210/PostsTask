@@ -3,10 +3,8 @@
     <h1 class="text-3xl">All Posts</h1>
     <div>
       <div v-for="post in posts" :key="post.id">
-        <h1 class="text-lg uppercase">
-          {{ post.title }}
-        </h1>
-        <div class="bg-gray-300 h-20 p-4">
+        <h1 class="text-lg uppercase mt-8 font-semibold">Title: {{ post.title }}</h1>
+        <div class="bg-gray-300 h-20 p-4 mt-4">
           {{ post.body }}
         </div>
       </div>
