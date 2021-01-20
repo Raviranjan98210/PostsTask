@@ -14,6 +14,6 @@ export default {
     state.authToken = null;
   },
   ADD_USER_POST(state, userPosts) {
-    state.userPosts = userPosts;
+    localStorage.setItem("userPost", JSON.stringify(userPosts));
   },
 };

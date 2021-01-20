@@ -28,6 +28,12 @@
     </div>
     <div>
       <h1 class="text-3xl mb-10">Your Posts</h1>
+      <div v-for="post in postsFromLocalStorage" :key="post.id">
+        <h1 class="text-lg uppercase mt-8 font-semibold">Title: {{ post.title }}</h1>
+        <div class="bg-gray-300  p-4 mt-4 mb-8">
+          {{ post.body }}
+        </div>
+      </div>
       <div v-for="post in userPosts" :key="post.id">
         <h1 class="text-lg uppercase mt-8 font-semibold">Title: {{ post.title }}</h1>
         <div class="bg-gray-300  p-4 mt-4 mb-8">
@@ -45,14 +51,8 @@ export default {
   props: {},
   data() {
     return {
-      userPosts: [
-        {
-          id: 1,
-          title: "Welcome to rivulet",
-          body:
-            "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. ",
-        },
-      ],
+      postsFromLocalStorage: [],
+      userPosts: [],
       post: {
         title: "",
         body: "",
@@ -72,6 +72,8 @@ export default {
     if (localStorage.getItem("authToken") === null) {
       this.$router.push("/login");
     }
+
+    this.postsFromLocalStorage = JSON.parse(localStorage.getItem("userPost"));
   },
   mounted() {},
 };

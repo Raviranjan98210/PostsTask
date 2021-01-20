@@ -30,6 +30,7 @@ export default {
   },
 
   addUserPost({ commit }, payload) {
+    console.log(payload);
     commit("ADD_USER_POST", payload);
   },
 };
