@@ -7,10 +7,11 @@
         <p class="mb-2">Enter your email</p>
         <form @submit.prevent="submitEmail">
           <input
-            type="text"
+            type="email"
             v-model="email"
             placeholder="Enter email"
             class="border px-2 py-2 w-full mb-4 focus:outline-none"
+            required
           />
           <button type="submit" class="w-full px-2 py-2 bg-pink-600 uppercase text-white">
             login
